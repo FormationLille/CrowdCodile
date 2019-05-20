@@ -1,0 +1,24 @@
+{
+    "crowdCodileApp": {
+        "dons": {
+            "home": {
+                "title": "Dons",
+                "createLabel": "Create a new Dons",
+                "createOrEditLabel": "Create or edit a Dons"
+            },
+            "created": "A new Dons is created with identifier {{ param }}",
+            "updated": "A Dons is updated with identifier {{ param }}",
+            "deleted": "A Dons is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Dons {{ id }}?"
+            },
+            "detail": {
+                "title": "Dons"
+            },
+            "date": "Date",
+            "montant": "Montant",
+            "projet": "Projet",
+            "profil": "Profil"
+        }
+    }
+}

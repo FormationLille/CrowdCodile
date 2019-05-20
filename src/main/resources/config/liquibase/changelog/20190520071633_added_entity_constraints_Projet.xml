@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Projet.
+    -->
+    <changeSet id="20190520071633-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="profil_porteur_id"
+                                 baseTableName="projet"
+                                 constraintName="fk_projet_profil_porteur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+        <addForeignKeyConstraint baseColumnNames="projet_id"
+                                 baseTableName="projet_profils_contributeurs"
+                                 constraintName="fk_projet_profils_contributeurs_projet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projet"/>
+        <addForeignKeyConstraint baseColumnNames="profils_contributeurs_id"
+                                 baseTableName="projet_profils_contributeurs"
+                                 constraintName="fk_projet_profils_contributeurs_profils_contributeurs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+        
+        <addForeignKeyConstraint baseColumnNames="projet_id"
+                                 baseTableName="projet_profils_suiveurs"
+                                 constraintName="fk_projet_profils_suiveurs_projet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projet"/>
+        <addForeignKeyConstraint baseColumnNames="profils_suiveurs_id"
+                                 baseTableName="projet_profils_suiveurs"
+                                 constraintName="fk_projet_profils_suiveurs_profils_suiveurs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+        
+    </changeSet>
+</databaseChangeLog>

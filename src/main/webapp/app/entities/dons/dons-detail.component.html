@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dons">
+            <h2><span jhiTranslate="crowdCodileApp.dons.detail.title">Dons</span> {{dons.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crowdCodileApp.dons.date">Date</span></dt>
+                <dd>
+                    <span>{{dons.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.dons.montant">Montant</span></dt>
+                <dd>
+                    <span>{{dons.montant}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.dons.projet">Projet</span></dt>
+                <dd>
+                    <div *ngIf="dons.projet">
+                        <a [routerLink]="['/projet', dons.projet?.id, 'view']">{{dons.projet?.nomProjet}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.dons.profil">Profil</span></dt>
+                <dd>
+                    <div *ngIf="dons.profil">
+                        <a [routerLink]="['/profil', dons.profil?.id, 'view']">{{dons.profil?.nom}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dons', dons.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+{
+    "name": "Projet",
+    "fields": [
+        {
+            "fieldName": "nomProjet",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "cout",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "sommeActuelle",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "delai",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lieu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "photoVideo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "url",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contreparties",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "commentaire",
+            "otherEntityRelationshipName": "projet",
+            "relationshipName": "commentaires"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "news",
+            "otherEntityRelationshipName": "projet",
+            "relationshipName": "news"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "profil",
+            "otherEntityRelationshipName": "projetsPortes",
+            "relationshipName": "profilPorteur",
+            "otherEntityField": "nom"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "profil",
+            "otherEntityRelationshipName": "projetContribues",
+            "relationshipName": "profilsContributeurs",
+            "otherEntityField": "nom",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "profil",
+            "otherEntityRelationshipName": "projetSuivis",
+            "relationshipName": "profilsSuiveurs",
+            "otherEntityField": "nom",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "categorie",
+            "otherEntityRelationshipName": "projet",
+            "relationshipName": "categorie",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190520071633",
+    "entityTableName": "projet",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

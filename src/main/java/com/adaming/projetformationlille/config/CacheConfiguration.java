@@ -38,6 +38,21 @@ public class CacheConfiguration {
             cm.createCache(com.adaming.projetformationlille.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.adaming.projetformationlille.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.adaming.projetformationlille.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Projet.class.getName(), jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Projet.class.getName() + ".commentaires", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Projet.class.getName() + ".news", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Projet.class.getName() + ".profilsContributeurs", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Projet.class.getName() + ".profilsSuiveurs", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Projet.class.getName() + ".categories", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Profil.class.getName(), jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Profil.class.getName() + ".projetsPortes", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Profil.class.getName() + ".projetContribues", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Profil.class.getName() + ".projetSuivis", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Dons.class.getName(), jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Commentaire.class.getName(), jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Categorie.class.getName(), jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.Categorie.class.getName() + ".projets", jcacheConfiguration);
+            cm.createCache(com.adaming.projetformationlille.domain.News.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

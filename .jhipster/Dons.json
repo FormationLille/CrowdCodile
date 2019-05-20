@@ -1,0 +1,44 @@
+{
+    "name": "Dons",
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "montant",
+            "fieldType": "Double",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "projet",
+            "otherEntityRelationshipName": "dons",
+            "relationshipName": "projet",
+            "otherEntityField": "nomProjet"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "profil",
+            "otherEntityRelationshipName": "dons",
+            "relationshipName": "profil",
+            "otherEntityField": "nom"
+        }
+    ],
+    "changelogDate": "20190520071635",
+    "entityTableName": "dons",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

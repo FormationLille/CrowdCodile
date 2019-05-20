@@ -1,0 +1,48 @@
+{
+    "name": "Commentaire",
+    "fields": [
+        {
+            "fieldName": "contenu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 5
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "profil",
+            "otherEntityRelationshipName": "commentaire",
+            "relationshipName": "profil",
+            "otherEntityField": "nom"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "projet",
+            "otherEntityRelationshipName": "commentaires",
+            "relationshipName": "projet",
+            "otherEntityField": "nomProjet"
+        }
+    ],
+    "changelogDate": "20190520071636",
+    "entityTableName": "commentaire",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

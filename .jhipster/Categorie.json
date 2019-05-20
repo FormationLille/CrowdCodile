@@ -1,0 +1,35 @@
+{
+    "name": "Categorie",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "projet",
+            "otherEntityRelationshipName": "categorie",
+            "relationshipName": "projet",
+            "otherEntityField": "nomProjet",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190520071637",
+    "entityTableName": "categorie",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

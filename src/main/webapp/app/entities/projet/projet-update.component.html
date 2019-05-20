@@ -1,0 +1,126 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-projet-heading" jhiTranslate="crowdCodileApp.projet.home.createOrEditLabel">Create or edit a Projet</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!projet.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="projet.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.nomProjet" for="field_nomProjet">Nom Projet</label>
+                    <input type="text" class="form-control" name="nomProjet" id="field_nomProjet"
+                        [(ngModel)]="projet.nomProjet" required/>
+                    <div [hidden]="!(editForm.controls.nomProjet?.dirty && editForm.controls.nomProjet?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nomProjet?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.cout" for="field_cout">Cout</label>
+                    <input type="number" class="form-control" name="cout" id="field_cout"
+                        [(ngModel)]="projet.cout" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.cout?.dirty && editForm.controls.cout?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.cout?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.cout?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.sommeActuelle" for="field_sommeActuelle">Somme Actuelle</label>
+                    <input type="number" class="form-control" name="sommeActuelle" id="field_sommeActuelle"
+                        [(ngModel)]="projet.sommeActuelle" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.sommeActuelle?.dirty && editForm.controls.sommeActuelle?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.sommeActuelle?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.sommeActuelle?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.delai" for="field_delai">Delai</label>
+                    <input type="number" class="form-control" name="delai" id="field_delai"
+                        [(ngModel)]="projet.delai" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.lieu" for="field_lieu">Lieu</label>
+                    <input type="text" class="form-control" name="lieu" id="field_lieu"
+                        [(ngModel)]="projet.lieu" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="projet.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.photoVideo" for="field_photoVideo">Photo Video</label>
+                    <div>
+                        <img [src]="'data:' + projet.photoVideoContentType + ';base64,' + projet.photoVideo" style="max-height: 100px;" *ngIf="projet.photoVideo" alt="projet image"/>
+                        <div *ngIf="projet.photoVideo" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{projet.photoVideoContentType}}, {{byteSize(projet.photoVideo)}}</span>
+                            <button type="button" (click)="clearInputImage('photoVideo', 'photoVideoContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_photoVideo" (change)="setFileData($event, projet, 'photoVideo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="photoVideo" id="field_photoVideo"
+                        [(ngModel)]="projet.photoVideo" />
+                    <input type="hidden" class="form-control" name="photoVideoContentType" id="field_photoVideoContentType"
+                        [(ngModel)]="projet.photoVideoContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.url" for="field_url">Url</label>
+                    <input type="text" class="form-control" name="url" id="field_url"
+                        [(ngModel)]="projet.url" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.contreparties" for="field_contreparties">Contreparties</label>
+                    <input type="text" class="form-control" name="contreparties" id="field_contreparties"
+                        [(ngModel)]="projet.contreparties" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.projet.profilPorteur" for="field_profilPorteur">Profil Porteur</label>
+                    <select class="form-control" id="field_profilPorteur" name="profilPorteur" [(ngModel)]="projet.profilPorteur" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="profilOption.id === projet.profilPorteur?.id ? projet.profilPorteur : profilOption" *ngFor="let profilOption of profils; trackBy: trackProfilById">{{profilOption.nom}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="crowdCodileApp.projet.profilsContributeurs" for="field_profilsContributeurs">Profils Contributeurs</label>
+                    <select class="form-control" id="field_profilsContributeurs" multiple name="profilsContributeurs" [(ngModel)]="projet.profilsContributeurs">
+                        <option [ngValue]="getSelected(projet.profilsContributeurs, profilOption)" *ngFor="let profilOption of profils; trackBy: trackProfilById">{{profilOption.nom}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="crowdCodileApp.projet.profilsSuiveurs" for="field_profilsSuiveurs">Profils Suiveurs</label>
+                    <select class="form-control" id="field_profilsSuiveurs" multiple name="profilsSuiveurs" [(ngModel)]="projet.profilsSuiveurs">
+                        <option [ngValue]="getSelected(projet.profilsSuiveurs, profilOption)" *ngFor="let profilOption of profils; trackBy: trackProfilById">{{profilOption.nom}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Dons.
+    -->
+    <changeSet id="20190520071635-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="projet_id"
+                                 baseTableName="dons"
+                                 constraintName="fk_dons_projet_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projet"/>
+
+        <addForeignKeyConstraint baseColumnNames="profil_id"
+                                 baseTableName="dons"
+                                 constraintName="fk_dons_profil_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profil"/>
+
+    </changeSet>
+</databaseChangeLog>

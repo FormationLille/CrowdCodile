@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="profil">
+            <h2><span jhiTranslate="crowdCodileApp.profil.detail.title">Profil</span> {{profil.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crowdCodileApp.profil.nom">Nom</span></dt>
+                <dd>
+                    <span>{{profil.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.profil.prenom">Prenom</span></dt>
+                <dd>
+                    <span>{{profil.prenom}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.profil.age">Age</span></dt>
+                <dd>
+                    <span>{{profil.age}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.profil.photo">Photo</span></dt>
+                <dd>
+                    <div *ngIf="profil.photo">
+                        <a (click)="openFile(profil.photoContentType, profil.photo)">
+                            <img [src]="'data:' + profil.photoContentType + ';base64,' + profil.photo" style="max-width: 100%;" alt="profil image"/>
+                        </a>
+                        {{profil.photoContentType}}, {{byteSize(profil.photo)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.profil.description">Description</span></dt>
+                <dd>
+                    <span>{{profil.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.profil.dateInscription">Date Inscription</span></dt>
+                <dd>
+                    <span>{{profil.dateInscription}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.profil.user">User</span></dt>
+                <dd>
+                    {{profil.user?.login}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/profil', profil.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

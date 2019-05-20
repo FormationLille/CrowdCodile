@@ -1,0 +1,81 @@
+{
+    "name": "Profil",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": 0
+        },
+        {
+            "fieldName": "photo",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateInscription",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "profil",
+            "relationshipName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "projet",
+            "otherEntityRelationshipName": "profilPorteur",
+            "relationshipName": "projetsPortes"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "projet",
+            "otherEntityRelationshipName": "profilsContributeurs",
+            "relationshipName": "projetContribues",
+            "otherEntityField": "nomProjet",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "projet",
+            "otherEntityRelationshipName": "profilsSuiveurs",
+            "relationshipName": "projetSuivis",
+            "otherEntityField": "nomProjet",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190520071634",
+    "entityTableName": "profil",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

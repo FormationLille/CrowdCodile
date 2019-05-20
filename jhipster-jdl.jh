@@ -1,0 +1,90 @@
+entity Projet{
+	nomProjet String required
+    cout Double min(0)
+    sommeActuelle Double min(0)
+    delai Integer
+    lieu String
+    description String
+    photoVideo ImageBlob
+    url String
+    contreparties String
+}
+
+entity Profil {
+    nom String required
+    prenom String required
+    age Integer min(0)
+    photo ImageBlob
+    description String
+    dateInscription LocalDate  
+}
+
+entity Dons {
+   date LocalDate required
+   montant Double required
+}
+
+
+entity Commentaire {
+    contenu String
+    date LocalDate
+    note Integer min(0) max(5)
+}
+
+entity Categorie {
+	nom String required
+    description String
+}
+
+entity News {
+	contenu String
+	date LocalDate
+}
+
+//les relations
+//Projet :
+relationship ManyToMany {
+	Projet{profilsContributeurs(nom)} to Profil{projetContribues(nomProjet)}
+    Projet{profilsSuiveurs(nom)} to Profil{projetSuivis(nomProjet)}
+}
+relationship ManyToOne {
+	Projet{profilPorteur(nom)} to Profil{projetsPortes(nomProjet)}
+}
+relationship OneToMany {
+	Projet{commentaires} to Commentaire{projet(nomProjet)}
+	Projet{news} to News{projet(nomProjet)}
+}
+
+//Profil
+relationship OneToOne  {
+	Profil{user(login)} to User
+}
+
+//Dons
+relationship ManyToOne {
+	Dons{projet(nomProjet)} to Projet
+}
+relationship ManyToOne {
+	Dons{profil(nom)} to Profil
+}
+
+//Commentaire
+relationship ManyToOne {
+	Commentaire{profil(nom)} to Profil
+}
+
+//Categorie
+relationship ManyToMany {
+	Categorie{projet(nomProjet)} to Projet{categorie}
+}
+
+
+// Set pagination options
+paginate Categorie, Profil, News with infinite-scroll
+paginate Projet, Commentaire with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

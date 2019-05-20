@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="projet">
+            <h2><span jhiTranslate="crowdCodileApp.projet.detail.title">Projet</span> {{projet.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crowdCodileApp.projet.nomProjet">Nom Projet</span></dt>
+                <dd>
+                    <span>{{projet.nomProjet}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.cout">Cout</span></dt>
+                <dd>
+                    <span>{{projet.cout}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.sommeActuelle">Somme Actuelle</span></dt>
+                <dd>
+                    <span>{{projet.sommeActuelle}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.delai">Delai</span></dt>
+                <dd>
+                    <span>{{projet.delai}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.lieu">Lieu</span></dt>
+                <dd>
+                    <span>{{projet.lieu}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.description">Description</span></dt>
+                <dd>
+                    <span>{{projet.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.photoVideo">Photo Video</span></dt>
+                <dd>
+                    <div *ngIf="projet.photoVideo">
+                        <a (click)="openFile(projet.photoVideoContentType, projet.photoVideo)">
+                            <img [src]="'data:' + projet.photoVideoContentType + ';base64,' + projet.photoVideo" style="max-width: 100%;" alt="projet image"/>
+                        </a>
+                        {{projet.photoVideoContentType}}, {{byteSize(projet.photoVideo)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.url">Url</span></dt>
+                <dd>
+                    <span>{{projet.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.contreparties">Contreparties</span></dt>
+                <dd>
+                    <span>{{projet.contreparties}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.profilPorteur">Profil Porteur</span></dt>
+                <dd>
+                    <div *ngIf="projet.profilPorteur">
+                        <a [routerLink]="['/profil', projet.profilPorteur?.id, 'view']">{{projet.profilPorteur?.nom}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.profilsContributeurs">Profils Contributeurs</span></dt>
+                <dd>
+                    <span *ngFor="let profilsContributeurs of projet.profilsContributeurs; let last = last">
+                        <a [routerLink]="['/profil', profilsContributeurs?.id, 'view' ]">{{profilsContributeurs.nom}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.projet.profilsSuiveurs">Profils Suiveurs</span></dt>
+                <dd>
+                    <span *ngFor="let profilsSuiveurs of projet.profilsSuiveurs; let last = last">
+                        <a [routerLink]="['/profil', profilsSuiveurs?.id, 'view' ]">{{profilsSuiveurs.nom}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/projet', projet.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

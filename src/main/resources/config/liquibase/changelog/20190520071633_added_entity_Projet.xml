@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Projet.
+    -->
+    <changeSet id="20190520071633-1" author="jhipster">
+        <createTable tableName="projet">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nom_projet" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cout" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="somme_actuelle" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="delai" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lieu" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="photo_video" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="photo_video_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contreparties" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="profil_porteur_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+        <createTable tableName="projet_profils_contributeurs">
+            <column name="profils_contributeurs_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="projet_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="projet_id, profils_contributeurs_id" tableName="projet_profils_contributeurs"/>
+        
+        <createTable tableName="projet_profils_suiveurs">
+            <column name="profils_suiveurs_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="projet_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="projet_id, profils_suiveurs_id" tableName="projet_profils_suiveurs"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

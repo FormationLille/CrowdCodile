@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="categorie">
+            <h2><span jhiTranslate="crowdCodileApp.categorie.detail.title">Categorie</span> {{categorie.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="crowdCodileApp.categorie.nom">Nom</span></dt>
+                <dd>
+                    <span>{{categorie.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.categorie.description">Description</span></dt>
+                <dd>
+                    <span>{{categorie.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="crowdCodileApp.categorie.projet">Projet</span></dt>
+                <dd>
+                    <span *ngFor="let projet of categorie.projets; let last = last">
+                        <a [routerLink]="['/projet', projet?.id, 'view' ]">{{projet.nomProjet}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/categorie', categorie.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{
+    "crowdCodileApp": {
+        "categorie": {
+            "home": {
+                "title": "Categories",
+                "createLabel": "Create a new Categorie",
+                "createOrEditLabel": "Create or edit a Categorie"
+            },
+            "created": "A new Categorie is created with identifier {{ param }}",
+            "updated": "A Categorie is updated with identifier {{ param }}",
+            "deleted": "A Categorie is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Categorie {{ id }}?"
+            },
+            "detail": {
+                "title": "Categorie"
+            },
+            "nom": "Nom",
+            "description": "Description",
+            "projet": "Projet"
+        }
+    }
+}

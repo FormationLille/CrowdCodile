@@ -1,0 +1,35 @@
+{
+    "crowdCodileApp": {
+        "projet": {
+            "home": {
+                "title": "Projets",
+                "createLabel": "Créer un nouveau Projet",
+                "createOrEditLabel": "Créer ou éditer un Projet"
+            },
+            "created": "Un nouveau Projet a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Projet avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Projet avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Projet {{ id }} ?"
+            },
+            "detail": {
+                "title": "Projet"
+            },
+            "nomProjet": "Nom Projet",
+            "cout": "Cout",
+            "sommeActuelle": "Somme Actuelle",
+            "delai": "Delai",
+            "lieu": "Lieu",
+            "description": "Description",
+            "photoVideo": "Photo Video",
+            "url": "Url",
+            "contreparties": "Contreparties",
+            "commentaires": "Commentaires",
+            "news": "News",
+            "profilPorteur": "Profil Porteur",
+            "profilsContributeurs": "Profils Contributeurs",
+            "profilsSuiveurs": "Profils Suiveurs",
+            "categorie": "Categorie"
+        }
+    }
+}

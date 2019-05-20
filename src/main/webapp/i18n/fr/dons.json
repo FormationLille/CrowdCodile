@@ -1,0 +1,24 @@
+{
+    "crowdCodileApp": {
+        "dons": {
+            "home": {
+                "title": "Dons",
+                "createLabel": "Créer un nouveau Dons",
+                "createOrEditLabel": "Créer ou éditer un Dons"
+            },
+            "created": "Un nouveau Dons a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Dons avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Dons avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Dons {{ id }} ?"
+            },
+            "detail": {
+                "title": "Dons"
+            },
+            "date": "Date",
+            "montant": "Montant",
+            "projet": "Projet",
+            "profil": "Profil"
+        }
+    }
+}

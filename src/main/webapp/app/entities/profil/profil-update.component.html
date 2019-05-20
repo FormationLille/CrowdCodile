@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-profil-heading" jhiTranslate="crowdCodileApp.profil.home.createOrEditLabel">Create or edit a Profil</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!profil.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="profil.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.profil.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="profil.nom" required/>
+                    <div [hidden]="!(editForm.controls.nom?.dirty && editForm.controls.nom?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nom?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.profil.prenom" for="field_prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" id="field_prenom"
+                        [(ngModel)]="profil.prenom" required/>
+                    <div [hidden]="!(editForm.controls.prenom?.dirty && editForm.controls.prenom?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.prenom?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.profil.age" for="field_age">Age</label>
+                    <input type="number" class="form-control" name="age" id="field_age"
+                        [(ngModel)]="profil.age" min="0" jhiMin="0"/>
+                    <div [hidden]="!(editForm.controls.age?.dirty && editForm.controls.age?.invalid)">
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.age?.errors?.min" jhiTranslate="entity.validation.min" [translateValues]="{ min: 0 }">
+                            This field should be at least 0.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.age?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.profil.photo" for="field_photo">Photo</label>
+                    <div>
+                        <img [src]="'data:' + profil.photoContentType + ';base64,' + profil.photo" style="max-height: 100px;" *ngIf="profil.photo" alt="profil image"/>
+                        <div *ngIf="profil.photo" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{profil.photoContentType}}, {{byteSize(profil.photo)}}</span>
+                            <button type="button" (click)="clearInputImage('photo', 'photoContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_photo" (change)="setFileData($event, profil, 'photo', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="photo" id="field_photo"
+                        [(ngModel)]="profil.photo" />
+                    <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
+                        [(ngModel)]="profil.photoContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.profil.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="profil.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.profil.dateInscription" for="field_dateInscription">Date Inscription</label>
+                    <div class="input-group">
+                        <input id="field_dateInscription" type="text" class="form-control" name="dateInscription" ngbDatepicker  #dateInscriptionDp="ngbDatepicker" [(ngModel)]="profil.dateInscription"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateInscriptionDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="crowdCodileApp.profil.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="profil.user" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === profil.user?.id ? profil.user : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
