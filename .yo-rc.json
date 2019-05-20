@@ -1,0 +1,38 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.adaming.projetformationlille",
+            "nativeLanguage": "fr"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "CrowdCodile",
+        "packageName": "com.adaming.projetformationlille",
+        "packageFolder": "com/adaming/projetformationlille",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "postgresql",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "Mjk3OGNhZDE0MGNjYTc3MjA3OWY4MWU1ZDk4OTg2ODNkZjA4YzZkNWVjZjMzMjFjZGIwYmVhNmMxODBjYTk4ZTgxZWEyM2EzZmNkMmMzZTcyMWQxMzIwZjAzYzgwMzE5ZWVhMTMwMjU3NTFmNGFiMWZkYTcxYTFjNWMxZDc1MTQ=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "fr",
+        "languages": ["fr", "en"]
+    }
+}
