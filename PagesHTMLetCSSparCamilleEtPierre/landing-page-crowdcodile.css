@@ -1,18 +1,88 @@
 h1 {
 	color: green;
-	font-size: 200px;
+	font-size: 60px;
 	text-align: center;
 }
 
 img {
-	width: 200px
+	width: 300px;
+	float: left;
 }
-/*
-		<img src="Crowdcodile.jpg" alt="Logo Crowdcodile">
-		<h2> CrowdCodile, en plein dans le mille ! </h2>
-		
 
-		
+#slogan {
+	text-align : center;
+	color: orange;
+	font-size : 25px;
+}
+
+.video {
+	float: left;
+	width: 200px;
+}
+/* Ne fonctionne pas */
+
+#searchbar {
+	float: right;
+	font-size : 17px;
+}
+
+#crea {
+	text-align: center;
+	font-size : 35px;
+	
+}
+
+
+/* unvisited link */
+a:link {
+  color: green;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+}
+
+
+
+
+#decou {
+	text-align: center;
+	font-size : 35px;
+}
+
+#des {
+	color: orange;
+	font-size : 20px;
+}
+
+#popul {
+	color: green;
+	font-size : 20px;
+}
+
+#but {
+	color: green;
+	font-size : 20px;
+}
+
+#reseaux {
+	color: orange;
+	font-size : 20px;
+}
+
+
+/*
 		
 		<p> <a href = page-crea-projets.html> Lancez votre projet </a> </p>
 		<p> <a href = page-decouverte-projets.html> Découvrir les différents projets </a> </p>
