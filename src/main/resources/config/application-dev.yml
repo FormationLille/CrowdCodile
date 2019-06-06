@@ -56,10 +56,10 @@ spring:
     liquibase:
         contexts: dev
     mail:
-        host: "smtp.gmail.com"
+        host: smtp.gmail.com
         port: 587
-        username: admin   
-        password: admin
+        username: crowdcodile01@gmail.com    
+        password: 123456
        
     messages:
         cache-duration: PT1S # 1 second, see the ISO 8601 standard
