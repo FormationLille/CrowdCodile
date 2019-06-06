@@ -133,7 +133,7 @@
     left: -8px;
     width: 24px;
     height: 10px;
-    background-image: url('../images/logo-jhipster.png');
+    background-image: url('../images/CrowdCodile/logoCrowdcodile.jpg');
     background-size: contain;
     -webkit-animation: lds-pacman-3 1s linear infinite;
     animation: lds-pacman-3 1.5s linear infinite;
@@ -142,7 +142,8 @@
     -webkit-animation-delay: -0.67s;
     animation-delay: -1s;
 }
-.app-loading .lds-pacman > div:nth-child(1) div:nth-child(2) {
+
+03 .app-loading .lds-pacman > div:nth-child(1) div:nth-child(2) {
     -webkit-animation-delay: -0.33s;
     animation-delay: -0.5s;
 }

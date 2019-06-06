@@ -1,17 +1,15 @@
 {
     "home": {
         "title": "Bienvenue sur CrowdCodile !",
-        "subtitle": "Ceci est votre page d'accueil",
+        "slogan": "CrowdCodile, en plein dans le mille !",
         "logged": {
             "message": "Vous êtes connecté en tant que \"{{username}}\"."
         },
-        "question": "Si vous avez des questions à propos de JHipster :",
-        "link": {
-            "homepage": "Page d'accueil de JHipster",
-            "stackoverflow": "JHipster sur Stack Overflow",
-            "bugtracker": "JHipster bug tracker",
-            "chat": "JHipster public chat room",
-            "follow": "Suivez @java_hipster sur Twitter"
+        "search": "Quel projet recherchez-vous ?",
+        "description": "CrowdCodile, enfin une plateforme de crowdfunding qui permet de cr�er des groupes de financement avec des sp�cialistes de votre domaine ! Votre projet souhaite toucher un <em>public plus large ? Aucun probl�me, CrowdCodile dispose �galement des fonctionnalit�s habituelles des plateformes de crowdfunding !",
+        "project": {
+            "start": "Lancer votre projet",
+            "list": "Découvrir les différents projets"
         },
         "like": "Si vous aimez JHipster, donnez nous une étoile sur",
         "github": "GitHub "
