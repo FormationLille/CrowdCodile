@@ -3,13 +3,13 @@
         "title": "Bienvenue sur CrowdCodile !",
         "slogan": "CrowdCodile, en plein dans le mille !",
         "logged": {
-            "message": "Vous êtes connecté en tant que \"{{username}}\"."
+            "message": "Vous etes connecte en tant que \"{{username}}\"."
         },
         "search": "Quel projet recherchez-vous ?",
-        "description": "CrowdCodile, enfin une plateforme de crowdfunding qui permet de cr�er des groupes de financement avec des sp�cialistes de votre domaine ! Votre projet souhaite toucher un <em>public plus large ? Aucun probl�me, CrowdCodile dispose �galement des fonctionnalit�s habituelles des plateformes de crowdfunding !",
+        "description": "CrowdCodile, enfin une plateforme de crowdfunding qui permet de creer des groupes de financement avec des specialistes de votre domaine ! Votre projet souhaite toucher un public plus large ? Aucun probleme, CrowdCodile dispose egalement des fonctionnalitees habituelles des plateformes de crowdfunding !",
         "project": {
             "start": "Lancer votre projet",
-            "list": "Découvrir les différents projets"
+            "list": "Decouvrir les differents projets"
         },
         "like": "Si vous aimez JHipster, donnez nous une étoile sur",
         "github": "GitHub "
