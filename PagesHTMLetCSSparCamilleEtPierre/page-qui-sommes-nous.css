@@ -1,0 +1,59 @@
+h1 {
+	color: green;
+	font-size: 60px;
+	text-align: center;
+}
+
+img {
+	width: 300px;
+	float: left;
+}
+
+#searchbar {
+	float: right;
+	font-size : 17px;
+}
+
+#projet {
+	text-align: left;
+	font-size : 25px;
+	color: blue;
+}
+
+
+/* unvisited link */
+a:link {
+  color: green;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+}
+
+
+
+
+#equipe {
+	text-align: left;
+	font-size : 25px;
+	color: blue;
+}
+
+#moyens {
+	color: left;
+	font-size : 25px;
+	color: blue;
+}
+
+

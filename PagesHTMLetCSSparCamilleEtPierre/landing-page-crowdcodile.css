@@ -1,0 +1,146 @@
+h1 {
+	color: green;
+	font-size: 60px;
+	text-align: center;
+}
+
+img {
+	width: 300px;
+	float: left;
+}
+
+#slogan {
+	text-align : center;
+	color: orange;
+	font-size : 25px;
+}
+
+.video {
+	float: left;
+	width: 200px;
+}
+/* Ne fonctionne pas */
+
+#searchbar {
+	float: right;
+	font-size : 17px;
+}
+
+#crea {
+	text-align: center;
+	font-size : 35px;
+	
+}
+
+
+/* unvisited link */
+a:link {
+  color: green;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+}
+
+
+
+
+#decou {
+	text-align: center;
+	font-size : 35px;
+}
+
+#des {
+	color: orange;
+	font-size : 20px;
+}
+
+#popul {
+	color: green;
+	font-size : 20px;
+}
+
+#but {
+	color: green;
+	font-size : 20px;
+}
+
+#reseaux {
+	color: orange;
+	font-size : 20px;
+}
+
+
+/*
+		
+		<p> <a href = page-crea-projets.html> Lancez votre projet </a> </p>
+		<p> <a href = page-decouverte-projets.html> Découvrir les différents projets </a> </p>
+		
+		
+		<!-- CREER UNE BARRE DE RECHERCHE -->
+		<div id="searchbar">
+			<span class="text">Quel projet cherchez-vous ?</span>
+			<form action="">
+				<input class="champ" type="text" placeholder="Recherche"/>
+				<input class="bouton" type="button" value=" " />
+			</form>
+		</div>
+		
+		<h2> Description </h2>
+		<p>
+		CrowdCodile, enfin une <strong>plateforme de crowdfunding</strong> qui permet de créer des <strong>groupes de financement</strong> avec des spécialistes de votre domaine ! 
+		Votre projet souhaite toucher un <em>public plus large</em> ? Aucun problème, CrowdCodile dispose également des <em>fonctionnalités habituelles</em> des plateformes de crowdfunding !
+		</p>
+		
+		<h2> Les projets populaires </h2>
+		
+		<ul>
+			<li> 
+				<img src="" alt="Image principale du projet">
+				<p> Informations sur le projet <!--<a href = >--></p>
+			</li>
+			<li> 
+				<img src="" alt="Image principale du projet">
+				<p> Informations sur le projet <!--<a href = >--></p>
+			</li>
+		</ul>
+		
+		<h2> Les projets proches de leur but </h2>
+		
+		<ul>
+			<li> 
+				<img src="" alt="Image principale du projet">
+				<p> Informations sur le projet <!--<a href = >--></p>
+			</li>
+			<li> 
+				<img src="" alt="Image principale du projet">
+				<p> Informations sur le projet <!--<a href = >--></p>
+			</li>
+		</ul>
+			
+		<hr>
+		
+		<img src="Crowdcodile.jpg" alt="Logo Crowdcodile">
+		<h3> Retrouvez nous sur les réseaux sociaux ! </h3>
+		
+		<p> <a href = https://www.facebook.com/crowd.codile.7> Facebook </a> </p>
+		
+		<p> <a href = https://twitter.com/Crowdcodile1> Twitter </a> </p>
+		
+		<p> <a href = https://www.instagram.com/crowdcodile/?hl=fr> Instagram </a> </p>
+			
+		<p> <a href = page-qui-sommes-nous.html> Qui sommes-nous ? </a> </p>
+			
+	</body>
+	*/
