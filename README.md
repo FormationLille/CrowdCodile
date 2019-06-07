@@ -5,7 +5,7 @@
 
 ### Qui a fait le projet ?
 
-La promotion Adaming Lille Mars / Juin 2019 Java / Cobol, merci à :
+LA promotion Adaming Lille Mars / Juin 2019 Java / Cobol, merci à :
 Remy, Noemie, Pierre, Antonin, Clément, Florian, Antoine, Florian, Yann, Antoine, Chadia, Romain, Celine, Camille et Taoufik.
 
 ### Qu’est-ce que c’est ?
