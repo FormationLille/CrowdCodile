@@ -66,7 +66,7 @@ spring:
             auth: true
             starttls.enable: true
             ssl.trust: smtp.gmail.com
-       
+       from: crowdcodile01@gmail.com
     messages:
         cache-duration: PT1S # 1 second, see the ISO 8601 standard
     thymeleaf:
