@@ -57,6 +57,7 @@ spring:
             auth: true
             starttls.enable: true
             ssl.trust: smtp.gmail.com
+        from: crowdcodile01@gmail.com
     thymeleaf:
         cache: true
 
